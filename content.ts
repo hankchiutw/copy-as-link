@@ -1,16 +1,20 @@
 export {};
 
-document.addEventListener('copy', (event) => {
+document.addEventListener('copy', async (event) => {
   // TODO: To detect selecting a link, recursively search parentElement until textContent changed
-  const selectedText = window.getSelection().toString();
+  const textToCopy = window.getSelection().toString();
   const pageUrl = window.location.href;
+  const htmlToCopy = `<a href="${pageUrl}">${textToCopy}</a>`;
 
-  // Prevent the default copy behavior and set custom clipboard content
-  event.clipboardData.setData('text/plain', selectedText);
-  event.clipboardData.setData(
-    'text/html',
-    `<a href="${pageUrl}">${selectedText}</a>`,
-  );
-  event.preventDefault();
-  console.log(`${selectedText} is copied as link to ${pageUrl}`);
+  const clipboardItem = new ClipboardItem({
+    'text/plain': new Blob([textToCopy], { type: 'text/plain' }),
+    'text/html': new Blob([htmlToCopy], { type: 'text/html' }),
+  });
+  try {
+    await navigator.clipboard.write([clipboardItem]);
+    event.preventDefault();
+    console.log(`"${textToCopy}" is copied as link to ${pageUrl}`);
+  } catch (error) {
+    console.log(`Fail to copy "${textToCopy}" as link to ${pageUrl}: `, error);
+  }
 });
