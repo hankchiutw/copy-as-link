@@ -18,7 +18,7 @@ const copyTextAsHtml = async (textToCopy: string) => {
   }
 };
 
-const useCopyListener = () => {
+export const useCopyListener = () => {
   const [textToCopy, setTextToCopy] = useState('');
 
   useEffect(() => {
@@ -37,12 +37,3 @@ const useCopyListener = () => {
 
   return { hasCopied: Boolean(textToCopy), CopiedAnchor };
 };
-
-const CopyAsLinkMessage = () => {
-  const { hasCopied, CopiedAnchor } = useCopyListener();
-  const message = hasCopied ? <>Copied {CopiedAnchor}</> : '';
-
-  return <div>{message}</div>;
-};
-
-export default CopyAsLinkMessage;
