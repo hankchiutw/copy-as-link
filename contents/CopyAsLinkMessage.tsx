@@ -1,10 +1,23 @@
-import { useCopyListener } from './useCopyListener';
+import styleText from 'data-text:./CopyAsLinkMessage.module.css';
+
+import { useCopyListener } from '~features/useCopyListener';
+
+import * as style from './CopyAsLinkMessage.module.css';
+
+export const getStyle = () => {
+  const style = document.createElement('style');
+  style.textContent = styleText;
+  return style;
+};
 
 const CopyAsLinkMessage = () => {
   const { hasCopied, CopiedAnchor } = useCopyListener();
-  const message = hasCopied ? <>Copied {CopiedAnchor}</> : '';
 
-  return <div>{message}</div>;
+  return hasCopied ? (
+    <div className={style.wrapper}>Copied&nbsp;{CopiedAnchor}</div>
+  ) : (
+    ''
+  );
 };
 
 export default CopyAsLinkMessage;
