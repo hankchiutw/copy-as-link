@@ -1,23 +1,25 @@
-import styleText from 'data-text:./CopyAsLinkMessage.module.css';
+import { notification } from 'antd';
+import { useEffect } from 'react';
 
 import { useCopyListener } from '~features/useCopyListener';
-
-import * as style from './CopyAsLinkMessage.module.css';
-
-export const getStyle = () => {
-  const style = document.createElement('style');
-  style.textContent = styleText;
-  return style;
-};
 
 const CopyAsLinkMessage = () => {
   const { hasCopied, CopiedAnchor } = useCopyListener();
 
-  return hasCopied ? (
-    <div className={style.wrapper}>Copied&nbsp;{CopiedAnchor}</div>
-  ) : (
-    ''
-  );
+  const [api, contextHolder] = notification.useNotification({
+    duration: 5,
+    placement: 'topLeft',
+  });
+
+  useEffect(() => {
+    if (hasCopied) {
+      api.info({
+        message: <>Copied {CopiedAnchor}</>,
+      });
+    }
+  });
+
+  return <>{contextHolder}</>;
 };
 
 export default CopyAsLinkMessage;
