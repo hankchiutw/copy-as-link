@@ -27,7 +27,7 @@ const CopiedInfo = ({ position }) => {
   useEffect(() => {
     const fadeOut = setTimeout(() => {
       setOpacity(0);
-    });
+    }, 500);
 
     return () => clearTimeout(fadeOut);
   }, []);
