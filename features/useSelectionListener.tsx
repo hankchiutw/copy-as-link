@@ -9,16 +9,22 @@ export const useSelectionListener = () => {
   const [position, setPosition] = useState<SelectionPosition>(null);
   const [selectedText, setSelectedText] = useState('');
 
+  const reset = () => {
+    setPosition(null);
+    setSelectedText('');
+  };
+
   useEffect(() => {
     const selectionHandler = () => {
       const selection = window.getSelection();
 
-      const invalidRange = !selection.rangeCount;
-      const sameStartAndEnd = selection.getRangeAt(0).collapsed;
-      if (invalidRange || sameStartAndEnd) {
-        setPosition(null);
-        setSelectedText('');
-        return;
+      if (!selection.rangeCount) {
+        return reset();
+      }
+
+      // same start and end
+      if (selection.getRangeAt(0).collapsed) {
+        return reset();
       }
 
       const { left, top, width, height } = selection
