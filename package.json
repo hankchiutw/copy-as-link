@@ -1,13 +1,14 @@
 {
   "name": "copy-as-link",
   "displayName": "Copy as link",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Copy the selected text as a link to the current page's URL",
   "author": "Hank Chiu",
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
-    "package": "plasmo package"
+    "package": "plasmo package",
+    "pub": "plasmo build --zip"
   },
   "dependencies": {
     "antd": "^5.21.4",
@@ -26,10 +27,5 @@
     "eslint-plugin-prettier": "^5.2.1",
     "prettier": "3.2.4",
     "typescript": "5.3.3"
-  },
-  "manifest": {
-    "host_permissions": [
-      "https://*/*"
-    ]
   }
 }
