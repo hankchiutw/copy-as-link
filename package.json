@@ -1,8 +1,8 @@
 {
   "name": "copy-as-link",
   "displayName": "Copy as link",
-  "version": "0.0.1",
-  "description": "Copy selected text as a link with current page URL",
+  "version": "0.1.0",
+  "description": "Copy the selected text as a link to the current page's URL",
   "author": "Hank Chiu",
   "scripts": {
     "dev": "plasmo dev",
