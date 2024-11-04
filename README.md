@@ -10,11 +10,11 @@ Copy as Link
 
 ## Overview
 
-**Copy as Link** is a simple and efficient Chrome extension that enables users to copy selected text from any webpage as a hyperlink to the current page's URL. This tool is perfect for quickly sharing information, creating references, or compiling notes with direct links.
+[Copy as Link][webstore] is a simple and efficient Chrome extension that enables users to copy selected text from any webpage as a hyperlink to the current page's URL. This tool is perfect for quickly sharing information, creating references, or compiling notes with direct links.
 
 ## Installation
 
-1. Visit the [Chrome Web Store link](https://chrome.google.com/webstore/detail/copy-as-link/ggjdfhajjlfhmmkfnlfgbeeoepdnnlij).
+1. Visit the [Chrome Web Store link][webstore].
 2. Click on "Add to Chrome."
 3. Confirm by clicking "Add Extension."
 
@@ -28,3 +28,5 @@ Copy as Link
 
 ## Contact
 hankchiu.tw@gmail.com
+
+[webstore]: https://chromewebstore.google.com/detail/copy-as-link/ggjdfhajjlfhmmkfnlfgbeeoepdnnlij
