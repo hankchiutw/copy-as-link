@@ -8,7 +8,9 @@
     "dev": "plasmo dev",
     "build": "plasmo build",
     "package": "plasmo package",
-    "pub": "plasmo build --zip"
+    "pub": "plasmo build --zip",
+    "dev:website": "next dev",
+    "build:website": "next build"
   },
   "dependencies": {
     "antd": "^5.21.4",

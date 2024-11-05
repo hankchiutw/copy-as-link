@@ -4,9 +4,10 @@
     "node_modules"
   ],
   "include": [
-    ".plasmo/index.d.ts",
     "./**/*.ts",
-    "./**/*.tsx"
+    "./**/*.tsx",
+    ".plasmo/index.d.ts",
+    ".next/types/**/*.ts"
   ],
   "compilerOptions": {
     "paths": {
@@ -14,6 +15,11 @@
         "./*"
       ]
     },
-    "baseUrl": "."
+    "baseUrl": ".",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   }
 }
