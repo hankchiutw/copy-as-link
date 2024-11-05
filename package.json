@@ -13,11 +13,17 @@
     "build:website": "next build"
   },
   "dependencies": {
+    "@radix-ui/react-icons": "^1.3.1",
     "antd": "^5.21.4",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.454.0",
     "next": "^15.0.2",
     "plasmo": "0.89.3",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "4.1.1",
