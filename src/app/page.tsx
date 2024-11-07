@@ -1,5 +1,7 @@
-import { Button } from '@/components/ui/button';
+'use client';
+
+import LandingPage from './landing-page';
 
 export default function Page() {
-  return <Button>Hello, Next.js!</Button>;
+  return <LandingPage></LandingPage>;
 }
