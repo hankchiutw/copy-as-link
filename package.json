@@ -5,10 +5,10 @@
   "description": "Copy the selected text as a link to the current page's URL",
   "author": "Hank Chiu",
   "scripts": {
-    "dev": "plasmo dev",
-    "build": "plasmo build",
-    "package": "plasmo package",
-    "pub": "plasmo build --zip",
+    "dev": "plasmo dev --src-path=.",
+    "build": "plasmo build --src-path=.",
+    "package": "plasmo package --src-path=.",
+    "pub": "plasmo build --src-path=. --zip",
     "dev:website": "next dev",
     "build:website": "next build"
   },
