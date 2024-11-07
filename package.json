@@ -1,7 +1,7 @@
 {
   "name": "copy-as-link",
   "displayName": "Copy as link",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Copy the selected text as a link to the current page's URL",
   "author": "Hank Chiu",
   "scripts": {
