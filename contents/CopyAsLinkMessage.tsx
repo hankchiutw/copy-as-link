@@ -1,8 +1,10 @@
-import icon32 from 'data-base64:~assets/icon-32.png';
 import { useEffect, useState } from 'react';
 
+import icon32 from '~assets/icon-32.png';
 import { copyTextAsHtml } from '~features/copy-text-as-html';
 import { useSelectionListener } from '~features/useSelectionListener';
+
+const icon32Url = (icon32.src || icon32) as string;
 
 const CopyAnchor = ({ onClick, position }) => {
   return (
@@ -17,7 +19,7 @@ const CopyAnchor = ({ onClick, position }) => {
         height: '16px',
         cursor: 'pointer',
       }}>
-      <img src={icon32} alt="copy as link" style={{ width: '100%' }} />
+      <img src={icon32Url} alt="copy as link" style={{ width: '100%' }} />
     </span>
   );
 };
